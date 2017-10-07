@@ -1,0 +1,9 @@
+name: linkedlist
+version: 0.1.0
+
+authors:
+  - Vishnu Bharathi <vishnubharathi04@gmail.com>
+
+crystal: 0.23.1
+
+license: MIT
