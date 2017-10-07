@@ -1,6 +1,6 @@
-# linkedlist
+# linkedlist.cr
 
-TODO: Write a description here
+Linked List Implementation for Crystal Programming Language
 
 ## Installation
 
@@ -9,7 +9,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   linkedlist:
-    github: [your-github-name]/linkedlist
+    github: scriptnull/linkedlist.cr
 ```
 
 ## Usage
@@ -18,20 +18,5 @@ dependencies:
 require "linkedlist"
 ```
 
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
-
 ## Contributing
-
-1. Fork it ( https://github.com/[your-github-name]/linkedlist/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
-
-## Contributors
-
-- [[your-github-name]](https://github.com/[your-github-name]) Vishnu Bharathi - creator, maintainer
+Please read [CONTRIBUTING.md](https://github.com/scriptnull/linkedlist.cr/blob/master/CONTRIBUTING.md) if you are interested in contributing to the project.
