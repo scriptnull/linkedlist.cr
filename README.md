@@ -24,12 +24,12 @@ require "linkedlist"
 ## Contributing
 Please read [CONTRIBUTING.md](https://github.com/scriptnull/linkedlist.cr/blob/master/CONTRIBUTING.md) if you are interested in contributing to the project.
 
-### Security
+## Security
 Please report any security vulnerabilities of this project to [keybase.io/scriptnull](https://keybase.io/scriptnull)
 
 ```bash
 curl https://keybase.io/scriptnull/pgp_keys.asc | gpg --import
 ```
 
-### License
+## License
 Any code inside this repository is Licensed under [MIT License](https://github.com/scriptnull/linkedlist.cr/blob/master/LICENSE)
