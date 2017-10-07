@@ -1,5 +1,5 @@
-<h1 align="center"> linkedlist.cr
-</h1>
+
+# linkedlist.cr
 
 [![Build Status](https://semaphoreci.com/api/v1/scriptnull/linkedlist-cr/branches/master/badge.svg)](https://semaphoreci.com/scriptnull/linkedlist-cr)
 
