@@ -1,19 +1,19 @@
 module Linkedlist
-  class SllNode(T)
+  class SinglyNode(T)
     @data : T
-    @next : SllNode(T) | Nil
+    @next : SinglyNode(T) | Nil
 
     property data
     property "next"
 
     # Initializes a node with data and next pointer
-    def initialize(@data : T, @next : SllNode(T) | Nil)
+    def initialize(@data : T, @next : SinglyNode(T) | Nil)
     end
   end
 
   class Singly(T)
     @length : Int32
-    @head : SllNode(T) | Nil
+    @head : SinglyNode(T) | Nil
 
     getter length
     getter head
@@ -26,7 +26,7 @@ module Linkedlist
 
     # Inserts new element at the head of the linked list
     def insert_head(data : T)
-      new_node = SllNode.new(data, nil)
+      new_node = SinglyNode.new(data, nil)
 
       if @head == nil
         @head = new_node
@@ -40,7 +40,7 @@ module Linkedlist
 
     # Inserts new element at the tail of the linked list
     def insert_tail(data : T)
-      new_node = SllNode.new(data, nil)
+      new_node = SinglyNode.new(data, nil)
 
       if @head == nil
         @head = new_node
