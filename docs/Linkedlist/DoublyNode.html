@@ -5,7 +5,7 @@
   <meta id="repository-name" content="github.com/scriptnull/linkedlist.cr">
   <link href="../css/style.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="../js/doc.js"></script>
-  <title>Linkedlist::SllNode(T) - github.com/scriptnull/linkedlist.cr</title>
+  <title>Linkedlist::DoublyNode(T) - github.com/scriptnull/linkedlist.cr</title>
 </head>
 <body>
 
@@ -30,7 +30,7 @@
       
     </li>
   
-  <li class=" " data-id="github.com/scriptnull/linkedlist.cr/Linkedlist/DoublyNode" data-name="linkedlist::doublynode(t)">
+  <li class=" current" data-id="github.com/scriptnull/linkedlist.cr/Linkedlist/DoublyNode" data-name="linkedlist::doublynode(t)">
       <a href="../Linkedlist/DoublyNode.html">DoublyNode</a>
       
     </li>
@@ -40,7 +40,7 @@
       
     </li>
   
-  <li class=" current" data-id="github.com/scriptnull/linkedlist.cr/Linkedlist/SllNode" data-name="linkedlist::sllnode(t)">
+  <li class=" " data-id="github.com/scriptnull/linkedlist.cr/Linkedlist/SllNode" data-name="linkedlist::sllnode(t)">
       <a href="../Linkedlist/SllNode.html">SllNode</a>
       
     </li>
@@ -57,12 +57,12 @@
 <div id="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Linkedlist::SllNode(T)
+  <span class="kind">class</span> Linkedlist::DoublyNode(T)
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Linkedlist/SllNode.html">Linkedlist::SllNode(T)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Linkedlist/DoublyNode.html">Linkedlist::DoublyNode(T)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -83,7 +83,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/singly.cr#L2" target="_blank">linkedlist/singly.cr</a>
+      <a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/doubly.cr#L2" target="_blank">linkedlist/doubly.cr</a>
     
     <br/>
   
@@ -96,7 +96,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28data%3AT%2Cnext%3ALinkedlist%3A%3ASllNode%28T%29%3F%29-class-method" class="signature"><strong>.new</strong>(data : T, next : Linkedlist::SllNode(T)?)</a>
+        <a href="#new%28data%3AT%2Cprev%3ALinkedlist%3A%3ADoublyNode%28T%29%3F%2Cnext%3ALinkedlist%3A%3ADoublyNode%28T%29%3F%29-class-method" class="signature"><strong>.new</strong>(data : T, prev : Linkedlist::DoublyNode(T)?, next : Linkedlist::DoublyNode(T)?)</a>
         
           <div class="summary"><p>Initializes a node with data and next pointer</p></div>
         
@@ -128,6 +128,16 @@
     
       <li class="entry-summary">
         <a href="#next%3D%28next%29-instance-method" class="signature"><strong>#next=</strong>(next)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#prev-instance-method" class="signature"><strong>#prev</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#prev%3D%28prev%29-instance-method" class="signature"><strong>#prev=</strong>(prev)</a>
         
       </li>
     
@@ -164,12 +174,12 @@
 
   <h2>Constructor Detail</h2>
   
-    <div class="entry-detail" id="new&#40;data:T,next:Linkedlist::SllNode&#40;T&#41;?&#41;-class-method">
+    <div class="entry-detail" id="new&#40;data:T,prev:Linkedlist::DoublyNode&#40;T&#41;?,next:Linkedlist::DoublyNode&#40;T&#41;?&#41;-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(data : T, next : <a href="../Linkedlist/SllNode.html">Linkedlist::SllNode</a>(T)?)
+        def self.<strong>new</strong>(data : T, prev : <a href="../Linkedlist/DoublyNode.html">Linkedlist::DoublyNode</a>(T)?, next : <a href="../Linkedlist/DoublyNode.html">Linkedlist::DoublyNode</a>(T)?)
 
-        <a class="method-permalink" href="#new%28data%3AT%2Cnext%3ALinkedlist%3A%3ASllNode%28T%29%3F%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28data%3AT%2Cprev%3ALinkedlist%3A%3ADoublyNode%28T%29%3F%2Cnext%3ALinkedlist%3A%3ADoublyNode%28T%29%3F%29-class-method">#</a>
       </div>
       
         <div class="doc"><p>Initializes a node with data and next pointer</p></div>
@@ -177,7 +187,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/singly.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/doubly.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -200,7 +210,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/singly.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/doubly.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -216,7 +226,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/singly.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/doubly.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -232,7 +242,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/singly.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/doubly.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -248,7 +258,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/singly.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/doubly.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="prev-instance-method">
+      <div class="signature">
+        
+        def <strong>prev</strong>
+
+        <a class="method-permalink" href="#prev-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/doubly.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="prev&#61;&#40;prev&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>prev=</strong>(prev)
+
+        <a class="method-permalink" href="#prev%3D%28prev%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/9aa970543b2f6c2151de2e7abe785a21e0c15998/src/linkedlist/doubly.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
