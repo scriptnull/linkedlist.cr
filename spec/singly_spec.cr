@@ -71,6 +71,19 @@ describe "Singly" do
         end
       end
     end
+
+    context "when traversing" do
+      it "should traverse forward with correct values" do
+        curr = ll.head
+        expected = [2, 1]
+        testIndex = 0
+        while curr
+          curr.data.should eq(expected[testIndex])
+          testIndex += 1
+          curr = curr.next
+        end
+      end
+    end
   end
 
   describe "#insert_tail" do
@@ -124,6 +137,19 @@ describe "Singly" do
         tail.should_not be_nil
         if tail
           tail.data.should eq(2)
+        end
+      end
+    end
+
+    context "when traversing" do
+      it "should traverse forward with correct values" do
+        curr = ll.head
+        expected = [1, 2]
+        testIndex = 0
+        while curr
+          curr.data.should eq(expected[testIndex])
+          testIndex += 1
+          curr = curr.next
         end
       end
     end
