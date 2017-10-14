@@ -125,7 +125,36 @@ module Linkedlist
       while curr && curr.data != value
         curr = curr.next
       end
-      curr
+
+      return curr
+    end
+
+    # Returns the element if found  or raises exception
+    #
+    # Running time: O(n)
+    def find_element(element : SinglyNode(T)) : SinglyNode(T)
+      curr = @head
+      while curr && curr != element
+        curr = curr.next
+      end
+
+      if !curr
+        raise "ElementNotFound"
+      end
+
+      return curr
+    end
+
+    # Returns the element if found or nil if not found
+    #
+    # Running time: O(n)
+    def find_element?(element : SinglyNode(T)) : SinglyNode(T) | Nil
+      curr = @head
+      while curr && curr != element
+        curr = curr.next
+      end
+
+      return curr
     end
   end
 end
