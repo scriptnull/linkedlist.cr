@@ -73,5 +73,59 @@ module Linkedlist
       @length += 1
     end
 
+    # Removes an element from the linked list
+    #
+    # Running time: O(n)
+    def remove(element : SinglyNode(T)) : T
+      prev = nil
+      curr = @head
+
+      while curr && curr != element
+        prev = curr
+        curr = curr.next
+      end
+      if curr
+        if prev
+          # element present at position other than head
+          prev.next = curr.next
+        else
+          # element present at head
+          @head = curr.next
+        end
+        if curr.next == nil
+          @tail = prev
+        end
+        return element.data
+      else
+        raise "ElementNotFound"
+      end
+    end
+
+    # Returns the first element with value or raises exception if not found
+    #
+    # Running time: O(n)
+    def find_element(value : T) : SinglyNode(T)
+      curr = @head
+      while curr && curr.data != value
+        curr = curr.next
+      end
+
+      if !curr
+        raise "ElementNotFound"
+      end
+
+      return curr
+    end
+
+    # Returns the first element with value or nil if not found
+    #
+    # Running time: O(n)
+    def find_element?(value : T) : SinglyNode(T) | Nil
+      curr = @head
+      while curr && curr.data != value
+        curr = curr.next
+      end
+      curr
+    end
   end
 end
