@@ -83,7 +83,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/scriptnull/linkedlist.cr/blob/a4668c662b3ccebab4c3e23ba6c6ab78d407e1e0/src/linkedlist/singly.cr#L14" target="_blank">linkedlist/singly.cr</a>
+      <a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L14" target="_blank">linkedlist/singly.cr</a>
     
     <br/>
   
@@ -112,6 +112,20 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#find_element%28value%3AT%29%3ALinkedlist%3A%3ASinglyNode%28T%29-instance-method" class="signature"><strong>#find_element</strong>(value : T) : Linkedlist::SinglyNode(T)</a>
+        
+          <div class="summary"><p>Returns the first element with value or raises exception if not found</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find_element%3F%28value%3AT%29%3ALinkedlist%3A%3ASinglyNode%28T%29%3F-instance-method" class="signature"><strong>#find_element?</strong>(value : T) : Linkedlist::SinglyNode(T)?</a>
+        
+          <div class="summary"><p>Returns the first element with value or nil if not found</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#head-instance-method" class="signature"><strong>#head</strong></a>
         
           <div class="summary"><p>Returns the head of linked list</p></div>
@@ -136,6 +150,13 @@
         <a href="#length-instance-method" class="signature"><strong>#length</strong></a>
         
           <div class="summary"><p>Returns the length of linked list.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#remove%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3AT-instance-method" class="signature"><strong>#remove</strong>(element : Linkedlist::SinglyNode(T)) : T</a>
+        
+          <div class="summary"><p>Removes an element from the linked list</p></div>
         
       </li>
     
@@ -192,7 +213,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/a4668c662b3ccebab4c3e23ba6c6ab78d407e1e0/src/linkedlist/singly.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -203,6 +224,46 @@
 
 
   <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="find_element&#40;value:T&#41;:Linkedlist::SinglyNode&#40;T&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>find_element</strong>(value : T) : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)
+
+        <a class="method-permalink" href="#find_element%28value%3AT%29%3ALinkedlist%3A%3ASinglyNode%28T%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns the first element with value or raises exception if not found</p>
+
+<p>Running time: O(n)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L107" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find_element?&#40;value:T&#41;:Linkedlist::SinglyNode&#40;T&#41;?-instance-method">
+      <div class="signature">
+        
+        def <strong>find_element?</strong>(value : T) : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)?
+
+        <a class="method-permalink" href="#find_element%3F%28value%3AT%29%3ALinkedlist%3A%3ASinglyNode%28T%29%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns the first element with value or nil if not found</p>
+
+<p>Running time: O(n)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
   
     <div class="entry-detail" id="head-instance-method">
       <div class="signature">
@@ -219,7 +280,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/a4668c662b3ccebab4c3e23ba6c6ab78d407e1e0/src/linkedlist/singly.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -239,7 +300,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/a4668c662b3ccebab4c3e23ba6c6ab78d407e1e0/src/linkedlist/singly.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -259,7 +320,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/a4668c662b3ccebab4c3e23ba6c6ab78d407e1e0/src/linkedlist/singly.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -279,7 +340,27 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/a4668c662b3ccebab4c3e23ba6c6ab78d407e1e0/src/linkedlist/singly.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="remove&#40;element:Linkedlist::SinglyNode&#40;T&#41;&#41;:T-instance-method">
+      <div class="signature">
+        
+        def <strong>remove</strong>(element : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)) : T
+
+        <a class="method-permalink" href="#remove%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3AT-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Removes an element from the linked list</p>
+
+<p>Running time: O(n)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L79" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -299,7 +380,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/a4668c662b3ccebab4c3e23ba6c6ab78d407e1e0/src/linkedlist/singly.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>

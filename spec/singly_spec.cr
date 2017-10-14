@@ -154,4 +154,110 @@ describe "Singly" do
       end
     end
   end
+
+  describe "#remove" do
+    ll = Linkedlist::Singly(Int32).new
+
+    context "when removing at head till empty" do
+      10.times do |i|
+        ll.insert_head(i + 1)
+      end
+
+      it "should remove head" do
+        head = ll.head
+        while head
+          ll.remove(head).should eq(head.data)
+          head = ll.head
+        end
+
+        ll.head.should be_nil
+        ll.tail.should be_nil
+      end
+    end
+
+    context "when removing at tail till empty" do
+      10.times do |i|
+        ll.insert_head(i + 1)
+      end
+
+      it "should remove head" do
+        tail = ll.tail
+        while tail
+          ll.remove(tail).should eq(tail.data)
+          tail = ll.tail
+        end
+
+        ll.tail.should be_nil
+        ll.head.should be_nil
+      end
+    end
+  end
+
+  describe "#find_element" do
+    ll = Linkedlist::Singly(Int32).new
+
+    context "when trying to find in empty list" do
+      it "should raise exception" do
+        expect_raises { ll.find_element(2) }
+      end
+    end
+
+    context "when trying to find non-empty list" do
+      10.times do |i|
+        ll.insert_tail(i + 1)
+      end
+
+      it "should raise exception if not found" do
+        expect_raises { ll.find_element(20) }
+      end
+
+      it "should return element if found" do
+        found = ll.find_element(8)
+        found.should_not be_nil
+
+        if found
+          nextElement = found.next
+          nextElement.should_not be_nil
+
+          if nextElement
+            nextElement.data.should eq(9)
+          end
+        end
+      end
+    end
+
+    describe "#find_element?" do
+      ll = Linkedlist::Singly(Int32).new
+
+      context "when trying to find in empty list" do
+        it "should return nil" do
+          ll.find_element?(2).should be_nil
+        end
+      end
+
+      context "when trying to find non-empty list" do
+        10.times do |i|
+          ll.insert_tail(i + 1)
+        end
+
+        it "should return nil if not found" do
+          ll.find_element?(20).should be_nil
+        end
+
+        it "should return element if found" do
+          found = ll.find_element?(8)
+          found.should_not be_nil
+
+          if found
+            nextElement = found.next
+            nextElement.should_not be_nil
+
+            if nextElement
+              nextElement.data.should eq(9)
+            end
+          end
+        end
+      end
+    end
+  end
 end
