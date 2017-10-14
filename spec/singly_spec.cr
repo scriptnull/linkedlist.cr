@@ -199,6 +199,9 @@ describe "Singly" do
     context "when trying to find in empty list" do
       it "should raise exception" do
         expect_raises { ll.find_element(2) }
+
+        nonMember = Linkedlist::SinglyNode(Int32).new(1, nil)
+        expect_raises { ll.find_element(nonMember) }
       end
     end
 
@@ -209,6 +212,9 @@ describe "Singly" do
 
       it "should raise exception if not found" do
         expect_raises { ll.find_element(20) }
+
+        nonMember = Linkedlist::SinglyNode(Int32).new(1, nil)
+        expect_raises { ll.find_element(nonMember) }
       end
 
       it "should return element if found" do
@@ -223,38 +229,60 @@ describe "Singly" do
             nextElement.data.should eq(9)
           end
         end
+
+        to_find = ll.find_element(2)
+        to_find.should_not be_nil
+
+        found = ll.find_element(to_find)
+        if found
+          nextElement = found.next
+          nextElement.should_not be_nil
+
+          if nextElement
+            nextElement.data.should eq(3)
+          end
+        end
+      end
+    end
+  end
+
+  describe "#find_element?" do
+    ll = Linkedlist::Singly(Int32).new
+
+    context "when trying to find in empty list" do
+      it "should return nil" do
+        ll.find_element?(2).should be_nil
+
+        nonMember = Linkedlist::SinglyNode(Int32).new(1, nil)
+        ll.find_element?(nonMember).should be_nil
       end
     end
 
-    describe "#find_element?" do
-      ll = Linkedlist::Singly(Int32).new
-
-      context "when trying to find in empty list" do
-        it "should return nil" do
-          ll.find_element?(2).should be_nil
-        end
+    context "when trying to find non-empty list" do
+      10.times do |i|
+        ll.insert_tail(i + 1)
       end
 
-      context "when trying to find non-empty list" do
-        10.times do |i|
-          ll.insert_tail(i + 1)
-        end
+      it "should return nil if not found" do
+        ll.find_element?(20).should be_nil
 
-        it "should return nil if not found" do
-          ll.find_element?(20).should be_nil
-        end
+        nonMember = Linkedlist::SinglyNode(Int32).new(20, nil)
+        ll.find_element?(nonMember).should be_nil
 
-        it "should return element if found" do
-          found = ll.find_element?(8)
-          found.should_not be_nil
+        nonMember = Linkedlist::SinglyNode(Int32).new(1, nil)
+        ll.find_element?(nonMember).should be_nil
+      end
 
-          if found
-            nextElement = found.next
-            nextElement.should_not be_nil
+      it "should return element if found" do
+        found = ll.find_element?(8)
+        found.should_not be_nil
 
-            if nextElement
-              nextElement.data.should eq(9)
-            end
+        if found
+          nextElement = found.next
+          nextElement.should_not be_nil
+
+          if nextElement
+            nextElement.data.should eq(9)
           end
         end
       end
