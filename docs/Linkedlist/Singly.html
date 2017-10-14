@@ -83,7 +83,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L14" target="_blank">linkedlist/singly.cr</a>
+      <a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L14" target="_blank">linkedlist/singly.cr</a>
     
     <br/>
   
@@ -119,6 +119,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#find_element%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3ALinkedlist%3A%3ASinglyNode%28T%29-instance-method" class="signature"><strong>#find_element</strong>(element : Linkedlist::SinglyNode(T)) : Linkedlist::SinglyNode(T)</a>
+        
+          <div class="summary"><p>Returns the element if found  or raises exception</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#find_element%3F%28value%3AT%29%3ALinkedlist%3A%3ASinglyNode%28T%29%3F-instance-method" class="signature"><strong>#find_element?</strong>(value : T) : Linkedlist::SinglyNode(T)?</a>
         
           <div class="summary"><p>Returns the first element with value or nil if not found</p></div>
@@ -126,9 +133,30 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#find_element%3F%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3ALinkedlist%3A%3ASinglyNode%28T%29%3F-instance-method" class="signature"><strong>#find_element?</strong>(element : Linkedlist::SinglyNode(T)) : Linkedlist::SinglyNode(T)?</a>
+        
+          <div class="summary"><p>Returns the element if found or nil if not found</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#head-instance-method" class="signature"><strong>#head</strong></a>
         
           <div class="summary"><p>Returns the head of linked list</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#insert_after%28value%3AT%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3ALinkedlist%3A%3ASinglyNode%28T%29-instance-method" class="signature"><strong>#insert_after</strong>(value : T, mark : Linkedlist::SinglyNode(T)) : Linkedlist::SinglyNode(T)</a>
+        
+          <div class="summary"><p>Inserts new element after the mark or raises exception if mark not found</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#insert_after%3F%28value%3AT%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3ALinkedlist%3A%3ASinglyNode%28T%29%3F-instance-method" class="signature"><strong>#insert_after?</strong>(value : T, mark : Linkedlist::SinglyNode(T)) : Linkedlist::SinglyNode(T)?</a>
+        
+          <div class="summary"><p>Inserts new element after the mark or returns nil if mark not found</p></div>
         
       </li>
     
@@ -213,7 +241,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -240,7 +268,27 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L107" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L107" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find_element&#40;element:Linkedlist::SinglyNode&#40;T&#41;&#41;:Linkedlist::SinglyNode&#40;T&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>find_element</strong>(element : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)) : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)
+
+        <a class="method-permalink" href="#find_element%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3ALinkedlist%3A%3ASinglyNode%28T%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns the element if found  or raises exception</p>
+
+<p>Running time: O(n)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L135" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -260,7 +308,27 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L123" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find_element?&#40;element:Linkedlist::SinglyNode&#40;T&#41;&#41;:Linkedlist::SinglyNode&#40;T&#41;?-instance-method">
+      <div class="signature">
+        
+        def <strong>find_element?</strong>(element : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)) : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)?
+
+        <a class="method-permalink" href="#find_element%3F%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3ALinkedlist%3A%3ASinglyNode%28T%29%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns the element if found or nil if not found</p>
+
+<p>Running time: O(n)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L151" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -280,7 +348,47 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="insert_after&#40;value:T,mark:Linkedlist::SinglyNode&#40;T&#41;&#41;:Linkedlist::SinglyNode&#40;T&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>insert_after</strong>(value : T, mark : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)) : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)
+
+        <a class="method-permalink" href="#insert_after%28value%3AT%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3ALinkedlist%3A%3ASinglyNode%28T%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Inserts new element after the mark or raises exception if mark not found</p>
+
+<p>Running time: O(n)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L163" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="insert_after?&#40;value:T,mark:Linkedlist::SinglyNode&#40;T&#41;&#41;:Linkedlist::SinglyNode&#40;T&#41;?-instance-method">
+      <div class="signature">
+        
+        def <strong>insert_after?</strong>(value : T, mark : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)) : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)?
+
+        <a class="method-permalink" href="#insert_after%3F%28value%3AT%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3ALinkedlist%3A%3ASinglyNode%28T%29%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Inserts new element after the mark or returns nil if mark not found</p>
+
+<p>Running time: O(n)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L177" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -300,7 +408,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -320,7 +428,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -340,7 +448,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -360,7 +468,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L79" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L79" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -380,7 +488,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/6d6720400c3d01ceb48f1e1e3d3efaa7dd9571a6/src/linkedlist/singly.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/07fd42ad7477a8f8f1de3adf29cfd8da3203977c/src/linkedlist/singly.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
