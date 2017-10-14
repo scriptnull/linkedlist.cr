@@ -79,6 +79,5 @@ module Linkedlist
 
       @length += 1
     end
-
   end
 end
