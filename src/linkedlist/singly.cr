@@ -17,10 +17,13 @@ module Linkedlist
     @tail : SinglyNode(T) | Nil
 
     # Returns the length of linked list
+    # Running time: O(1)
     getter length
     # Returns the head of linked list
+    # Running time: O(1)
     getter head
     # Returns the tail of linked list
+    # Running time: O(1)
     getter tail
 
     # Intializes a singly linked list
@@ -31,6 +34,7 @@ module Linkedlist
     end
 
     # Inserts new element at the head of the linked list
+    # Running time: O(1)
     def insert_head(data : T)
       new_node = SinglyNode.new(data, nil)
 
@@ -46,6 +50,7 @@ module Linkedlist
     end
 
     # Inserts new element at the tail of the linked list
+    # Running time: O(1)
     def insert_tail(data : T)
       new_node = SinglyNode.new(data, nil)
 
