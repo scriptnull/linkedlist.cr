@@ -14,9 +14,14 @@ module Linkedlist
   class Singly(T)
     @length : Int32
     @head : SinglyNode(T) | Nil
+    @tail : SinglyNode(T) | Nil
 
+    # Returns the length of linked list
     getter length
+    # Returns the head of linked list
     getter head
+    # Returns the tail of linked list
+    getter tail
 
     # Intializes a singly linked list
     def initialize
@@ -30,6 +35,7 @@ module Linkedlist
 
       if @head == nil
         @head = new_node
+        @tail = new_node
       else
         new_node.next = @head
         @head = new_node
@@ -44,12 +50,13 @@ module Linkedlist
 
       if @head == nil
         @head = new_node
+        @tail = new_node
       else
-        curr = @head
-        while curr && curr.next != nil
-          curr = curr.next
+        tail = @tail
+        if tail
+          tail.next = new_node
+          @tail = new_node
         end
-        curr && curr.next = new_node
       end
 
       @length += 1
