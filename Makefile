@@ -1,4 +1,4 @@
-.PHONY: docs
+.PHONY: docs bench
 
 docs:
 	@rm -rf docs/
@@ -6,3 +6,6 @@ docs:
 	@mkdir docs
 	@mv doc/* docs/
 	@rm -rf doc/
+
+bench:
+	@crystal run bench/*.cr --release
