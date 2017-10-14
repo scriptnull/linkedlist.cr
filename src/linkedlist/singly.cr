@@ -27,6 +27,7 @@ module Linkedlist
     def initialize
       @length = 0
       @head = nil
+      @tail = nil
     end
 
     # Inserts new element at the head of the linked list

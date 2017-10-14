@@ -11,6 +11,10 @@ describe "Singly" do
     it "should have head as nil" do
       ll.head.should be_nil
     end
+
+    it "should have tail as nil" do
+      ll.tail.should be_nil
+    end
   end
 
   describe "#insert_head" do
@@ -34,6 +38,14 @@ describe "Singly" do
           head.data.should eq(1)
         end
       end
+
+      it "should have tail with data as 1" do
+        tail = ll.tail
+        tail.should_not be_nil
+        if tail
+          tail.data.should eq(1)
+        end
+      end
     end
 
     context "when inserting in non-empty linked list " do
@@ -43,15 +55,19 @@ describe "Singly" do
         ll.length.should eq(2)
       end
 
-      it "should have non-nil head" do
-        ll.head.should_not be_nil
-      end
-
       it "should have head with data as 2" do
         head = ll.head
         head.should_not be_nil
         if head
           head.data.should eq(2)
+        end
+      end
+
+      it "should have tail with data as 1" do
+        tail = ll.tail
+        tail.should_not be_nil
+        if tail
+          tail.data.should eq(1)
         end
       end
     end
@@ -67,8 +83,12 @@ describe "Singly" do
         ll.length.should eq(1)
       end
 
-      it "should have non-nil head" do
-        ll.head.should_not be_nil
+      it "should have tail with data as 1" do
+        tail = ll.tail
+        tail.should_not be_nil
+        if tail
+          tail.data.should eq(1)
+        end
       end
 
       it "should have head with data as 1" do
@@ -99,17 +119,13 @@ describe "Singly" do
         end
       end
 
-      it "should have tail value as 2" do
-        curr = ll.head
-        curr.should_not be_nil
-
-        while curr && curr.next != nil
-          curr = curr.next
+      it "should have tail with data as 2" do
+        tail = ll.tail
+        tail.should_not be_nil
+        if tail
+          tail.data.should eq(2)
         end
-
-        curr && curr.data.should eq(2)
       end
-
     end
   end
 end

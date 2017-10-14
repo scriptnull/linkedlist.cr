@@ -23,10 +23,6 @@ describe "Doubly" do
         ll.length.should eq(1)
       end
 
-      it "should have non-nil head" do
-        ll.head.should_not be_nil
-      end
-
       it "should have head with data as 1" do
         head = ll.head
         head.should_not be_nil
@@ -41,10 +37,6 @@ describe "Doubly" do
 
       it "should have length 2" do
         ll.length.should eq(2)
-      end
-
-      it "should have non-nil head" do
-        ll.head.should_not be_nil
       end
 
       it "should have head with data as 2" do
@@ -95,10 +87,6 @@ describe "Doubly" do
         ll.length.should eq(1)
       end
 
-      it "should have non-nil head" do
-        ll.head.should_not be_nil
-      end
-
       it "should have head with data as 1" do
         head = ll.head
         head.should_not be_nil
@@ -113,10 +101,6 @@ describe "Doubly" do
 
       it "should have length 1" do
         ll.length.should eq(2)
-      end
-
-      it "should have non-nil head" do
-        ll.head.should_not be_nil
       end
 
       it "should have head with data as 1" do
