@@ -288,4 +288,60 @@ describe "Singly" do
       end
     end
   end
+
+  describe "#insert_after" do
+    ll = Linkedlist::Singly(Int32).new
+    10.times do |i|
+      ll.insert_tail(i + 1)
+    end
+
+    context "when trying to insert after non-existing element" do
+      it "should raise exception" do
+        nonMember = Linkedlist::SinglyNode.new(11, nil)
+        expect_raises { ll.insert_after(1, nonMember) }
+      end
+    end
+
+    context "when trying to insert after existing element" do
+      it "should return back inserted element" do
+        member = ll.find_element(8)
+        inserted = ll.insert_after(1, member)
+
+        next_element = inserted.next
+        if next_element
+          next_element.data.should eq(9)
+        end
+      end
+    end
+  end
+
+  describe "#insert_after?" do
+  ll = Linkedlist::Singly(Int32).new
+  10.times do |i|
+    ll.insert_tail(i + 1)
+  end
+
+  context "when trying to insert after non-existing element" do
+    it "should raise exception" do
+      nonMember = Linkedlist::SinglyNode.new(11, nil)
+      ll.insert_after?(1, nonMember).should be_nil
+    end
+  end
+
+  context "when trying to insert after existing element" do
+    it "should return back inserted element" do
+      member = ll.find_element(8)
+      inserted = ll.insert_after?(1, member)
+
+      inserted.should_not be_nil
+
+      if inserted
+        next_element = inserted.next
+        if next_element
+          next_element.data.should eq(9)
+        end
+      end
+    end
+  end
+end
 end

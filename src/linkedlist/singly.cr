@@ -156,5 +156,33 @@ module Linkedlist
 
       return curr
     end
+
+    # Inserts new element after the mark or raises exception if mark not found
+    #
+    # Running time: O(n)
+    def insert_after(value : T, mark : SinglyNode(T)) : SinglyNode(T)
+      marked_node = self.find_element?(mark)
+      if !marked_node
+        raise "ElementNotFound"
+      end
+
+      new_node = SinglyNode(T).new(value, marked_node.next)
+      marked_node.next = new_node
+      return new_node
+    end
+
+    # Inserts new element after the mark or returns nil if mark not found
+    #
+    # Running time: O(n)
+    def insert_after?(value : T, mark : SinglyNode(T)) : SinglyNode(T) | Nil
+      marked_node = self.find_element?(mark)
+      if !marked_node
+        return nil
+      end
+
+      new_node = SinglyNode(T).new(value, marked_node.next)
+      marked_node.next = new_node
+      return new_node
+    end
   end
 end
