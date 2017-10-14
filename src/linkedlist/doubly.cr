@@ -28,13 +28,15 @@ module Linkedlist
 
     # Inserts new element at the head of the linked list
     def insert_head(data : T)
-      new_node = Doubly.new(data, nil, nil)
+      new_node = DoublyNode(T).new(data, nil, nil)
 
-      if @head == nil
+      head = @head
+
+      if head
+        new_node.next = head
+        head && head.prev = new_node
         @head = new_node
       else
-        new_node.next = @head
-        @head.prev = new_node
         @head = new_node
       end
 
@@ -43,17 +45,19 @@ module Linkedlist
 
     # Inserts new element at the tail of the linked list
     def insert_tail(data : T)
-      new_node = DoublyNode.new(data, nil)
+      new_node = DoublyNode(T).new(data, nil, nil)
 
-      if @head == nil
-        @head = new_node
-      else
-        curr = @head
+      head = @head
+
+      if head
+        curr = head
         while curr && curr.next != nil
           curr = curr.next
         end
         curr && curr.next = new_node
         new_node.prev = curr
+      else
+        @head = new_node
       end
 
       @length += 1
