@@ -16,14 +16,20 @@ module Linkedlist
   class Doubly(T)
     @length : Int32
     @head : DoublyNode(T) | Nil
+    @tail : DoublyNode(T) | Nil
 
+    # Returns the length of linked list
     getter length
+    # Returns the head of linked list
     getter head
+    # Returns the tail of linked list
+    getter tail
 
     # Intializes a doubly linked list
     def initialize
       @length = 0
       @head = nil
+      @tail = nil
     end
 
     # Inserts new element at the head of the linked list
@@ -38,6 +44,7 @@ module Linkedlist
         @head = new_node
       else
         @head = new_node
+        @tail = new_node
       end
 
       @length += 1
@@ -48,16 +55,16 @@ module Linkedlist
       new_node = DoublyNode(T).new(data, nil, nil)
 
       head = @head
+      tail = @tail
 
-      if head
-        curr = head
-        while curr && curr.next != nil
-          curr = curr.next
-        end
+      if head && tail
+        curr = @tail
         curr && curr.next = new_node
         new_node.prev = curr
+        @tail = new_node
       else
         @head = new_node
+        @tail = new_node
       end
 
       @length += 1
