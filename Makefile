@@ -1,5 +1,8 @@
 .PHONY: docs
 
 docs:
+	@rm -rf docs/
 	@crystal docs
-	@mv doc/ docs/
+	@mkdir docs
+	@mv doc/* docs/
+	@rm -rf doc/
