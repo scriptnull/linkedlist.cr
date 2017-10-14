@@ -8,4 +8,4 @@ docs:
 	@rm -rf doc/
 
 bench:
-	@crystal run bench/*.cr --release
+	@crystal run bench/*.cr --release --no-debug
