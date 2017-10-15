@@ -344,4 +344,33 @@ describe "Singly" do
       end
     end
   end
+
+  describe "#previous_element?" do
+    ll = Linkedlist::Singly(Int32).new
+
+    context "when finding in empty list" do
+      it "should return nil" do
+        nonMember = Linkedlist::SinglyNode(Int32).new(10, nil)
+        ll.previous_element?(nonMember).should be_nil
+      end
+    end
+
+    context "when finding in non-empty list" do
+      10.times do |i|
+        ll.insert_tail(i + 1)
+      end
+
+      it "should return nil for non-existing member" do
+        nonMember = Linkedlist::SinglyNode(Int32).new(10, nil)
+        ll.previous_element?(nonMember).should be_nil
+      end
+
+      it "should return previous element for existing member" do
+        member = ll.find_element(10)
+        prev = ll.previous_element?(member)
+        prev.should_not be_nil
+        prev.should eq(ll.find_element(9))
+      end
+    end
+  end
 end
