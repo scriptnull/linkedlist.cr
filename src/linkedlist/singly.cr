@@ -186,6 +186,10 @@ module Linkedlist
 
       new_node = SinglyNode(T).new(value, marked_node.next)
       marked_node.next = new_node
+
+      if marked_node == @tail
+        @tail = new_node
+      end
       return new_node
     end
 
@@ -200,6 +204,10 @@ module Linkedlist
 
       new_node = SinglyNode(T).new(value, marked_node.next)
       marked_node.next = new_node
+
+      if marked_node == @tail
+        @tail = new_node
+      end
       return new_node
     end
   end

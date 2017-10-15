@@ -290,55 +290,108 @@ describe "Singly" do
   end
 
   describe "#insert_after" do
-    ll = Linkedlist::Singly(Int32).new
-    10.times do |i|
-      ll.insert_tail(i + 1)
-    end
+    context "inside list with single element" do
+      ll = Linkedlist::Singly(Int32).new
+      ll.insert_tail(1)
 
-    context "when trying to insert after non-existing element" do
-      it "should raise exception" do
-        nonMember = Linkedlist::SinglyNode.new(11, nil)
-        expect_raises { ll.insert_after(1, nonMember) }
+      context "when trying to insert after non-existing element" do
+        it "should raise exception" do
+          nonMember = Linkedlist::SinglyNode.new(11, nil)
+          expect_raises { ll.insert_after(2, nonMember) }
+        end
+      end
+
+      context "when trying to insert after existing element" do
+        it "should return back inserted element" do
+          member = ll.find_element(1)
+          inserted = ll.insert_after(2, member)
+
+          next_element = inserted.next
+          next_element.should be_nil
+          ll.tail.should eq(inserted)
+        end
       end
     end
 
-    context "when trying to insert after existing element" do
-      it "should return back inserted element" do
-        member = ll.find_element(8)
-        inserted = ll.insert_after(1, member)
+    context "inside list with multiple elements" do
+      ll = Linkedlist::Singly(Int32).new
+      10.times do |i|
+        ll.insert_tail(i + 1)
+      end
 
-        next_element = inserted.next
-        if next_element
-          next_element.data.should eq(9)
+      context "when trying to insert after non-existing element" do
+        it "should raise exception" do
+          nonMember = Linkedlist::SinglyNode.new(11, nil)
+          expect_raises { ll.insert_after(1, nonMember) }
+        end
+      end
+
+      context "when trying to insert after existing element" do
+        it "should return back inserted element" do
+          member = ll.find_element(8)
+          inserted = ll.insert_after(1, member)
+
+          next_element = inserted.next
+          if next_element
+            next_element.data.should eq(9)
+          end
         end
       end
     end
   end
 
   describe "#insert_after?" do
-    ll = Linkedlist::Singly(Int32).new
-    10.times do |i|
-      ll.insert_tail(i + 1)
-    end
+    context "inside list with single element" do
+      ll = Linkedlist::Singly(Int32).new
+      ll.insert_tail(1)
 
-    context "when trying to insert after non-existing element" do
-      it "should raise exception" do
-        nonMember = Linkedlist::SinglyNode.new(11, nil)
-        ll.insert_after?(1, nonMember).should be_nil
+      context "when trying to insert after non-existing element" do
+        it "should raise exception" do
+          nonMember = Linkedlist::SinglyNode.new(11, nil)
+          ll.insert_after?(2, nonMember).should be_nil
+        end
+      end
+
+      context "when trying to insert after existing element" do
+        it "should return back inserted element" do
+          member = ll.find_element(1)
+          inserted = ll.insert_after?(2, member)
+
+          inserted.should_not be_nil
+          if inserted
+            next_element = inserted.next
+            next_element.should be_nil
+            ll.tail.should eq(inserted)
+          end
+        end
       end
     end
 
-    context "when trying to insert after existing element" do
-      it "should return back inserted element" do
-        member = ll.find_element(8)
-        inserted = ll.insert_after?(1, member)
+    context "inside list with multiple elements" do
+      ll = Linkedlist::Singly(Int32).new
+      10.times do |i|
+        ll.insert_tail(i + 1)
+      end
 
-        inserted.should_not be_nil
+      context "when trying to insert after non-existing element" do
+        it "should raise exception" do
+          nonMember = Linkedlist::SinglyNode.new(11, nil)
+          ll.insert_after?(1, nonMember).should be_nil
+        end
+      end
 
-        if inserted
-          next_element = inserted.next
-          if next_element
-            next_element.data.should eq(9)
+      context "when trying to insert after existing element" do
+        it "should return back inserted element" do
+          member = ll.find_element(8)
+          inserted = ll.insert_after?(1, member)
+
+          inserted.should_not be_nil
+
+          if inserted
+            next_element = inserted.next
+            if next_element
+              next_element.data.should eq(9)
+            end
           end
         end
       end
