@@ -258,5 +258,22 @@ module Linkedlist
         @head = curr
       end
     end
+
+    # Moves element to front if found. List is unmodified otherwise.
+    #
+    # Running time: O(n)
+    def move_to_back(element : SinglyNode(T))
+      prev = self.previous_element?(element)
+      found = self.find_element?(element)
+      if found && found.next && prev
+        prev.next = found.next
+        found.next = nil
+        tail = @tail
+        if tail
+          tail.next = found
+        end
+        @tail = found
+      end
+    end
   end
 end
