@@ -539,6 +539,7 @@ describe "Singly" do
   describe "#move_to_front" do
     context "inside an empty list" do
       ll = Linkedlist::Singly(Int32).new
+
       it "should not do anything" do
         non_member = Linkedlist::SinglyNode(Int32).new(1, nil)
         ll.move_to_front(non_member)
@@ -548,6 +549,7 @@ describe "Singly" do
     context "inside list with one element" do
       ll = Linkedlist::Singly(Int32).new
       ll.insert_tail(1)
+
       it "should preserve the same head" do
         prev_head = ll.head
         if prev_head
@@ -594,6 +596,69 @@ describe "Singly" do
           curr = curr.next
           testIndex += 1
         end
+      end
+    end
+  end
+
+  describe "#move_to_back" do
+    context "inside an empty list" do
+      ll = Linkedlist::Singly(Int32).new
+
+      it "should not do anything" do
+        non_member = Linkedlist::SinglyNode(Int32).new(1, nil)
+        ll.move_to_back(non_member)
+      end
+    end
+
+    context "inside list with one element" do
+      ll = Linkedlist::Singly(Int32).new
+      ll.insert_tail(1)
+
+      it "should preserve the same tail" do
+        prev_tail = ll.tail
+        if prev_tail
+          ll.move_to_back(prev_tail)
+        end
+        prev_tail.should eq(ll.tail)
+      end
+    end
+
+    context "inside list with multiple elements" do
+      ll = Linkedlist::Singly(Int32).new
+      10.times do |i|
+        ll.insert_tail(i + 1)
+      end
+
+      it "should not do anything for non-member" do
+        prev_tail = ll.tail
+        non_member = Linkedlist::SinglyNode(Int32).new(11, nil)
+        ll.move_to_back(non_member)
+        prev_tail.should eq(ll.tail)
+
+        curr = ll.head
+        expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        testIndex = 0
+        while curr
+          curr.data.should eq(expected[testIndex])
+          curr = curr.next
+          testIndex += 1
+        end
+      end
+
+      it "should move to back for member" do
+        five = ll.find_element(5)
+        ll.move_to_back(five)
+
+        curr = ll.head
+        expected = [1, 2, 3, 4, 6, 7, 8, 9, 10, 5]
+        testIndex = 0
+        while curr
+          curr.data.should eq(expected[testIndex])
+          curr = curr.next
+          testIndex += 1
+        end
+
+        ll.tail.should eq(five)
       end
     end
   end
