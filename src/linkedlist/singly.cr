@@ -157,6 +157,24 @@ module Linkedlist
       return curr
     end
 
+    # Returns the previous element if element found or nil if not found
+    #
+    # Running time: O(n)
+    def previous_element?(element : SinglyNode(T)) : SinglyNode(T) | Nil
+      prev = nil
+      curr = @head
+      while curr && curr != element
+        prev = curr
+        curr = curr.next
+      end
+
+      if !curr
+        return nil
+      end
+
+      return prev
+    end
+
     # Inserts new element after the mark or raises exception if mark not found
     #
     # Running time: O(n)
