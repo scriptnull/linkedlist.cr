@@ -210,5 +210,36 @@ module Linkedlist
       end
       return new_node
     end
+
+    # Inserts new element before the mark or returns nil if mark not found
+    #
+    # Running time: O(n)
+    def insert_before?(value : T, mark : SinglyNode(T)) : SinglyNode(T) | Nil
+      marked_node = self.find_element?(mark)
+      if !marked_node
+        return nil
+      end
+
+      new_node = SinglyNode(T).new(value, marked_node)
+      prev_node = self.previous_element?(mark)
+      if prev_node
+        prev_node.next = new_node
+      else
+        @head = new_node
+      end
+      return new_node
+    end
+
+    # Inserts new element before the mark or raises exception if mark not found
+    #
+    # Running time: O(n)
+    def insert_before(value : T, mark : SinglyNode(T)) : SinglyNode(T)
+      inserted = self.insert_before?(value, mark)
+      if !inserted
+        raise "ElementNotFound"
+      end
+
+      return inserted
+    end
   end
 end
