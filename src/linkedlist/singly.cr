@@ -241,5 +241,22 @@ module Linkedlist
 
       return inserted
     end
+
+    # Moves element to front if found. List is unmodified otherwise.
+    #
+    # Running time: O(n)
+    def move_to_front(element : SinglyNode(T))
+      prev = nil
+      curr = @head
+      while curr && curr != element
+        prev = curr
+        curr = curr.next
+      end
+      if curr && prev
+        prev.next = curr.next
+        curr.next = @head
+        @head = curr
+      end
+    end
   end
 end
