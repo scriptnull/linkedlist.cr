@@ -662,4 +662,164 @@ describe "Singly" do
       end
     end
   end
+
+  describe "#move_before" do
+    context "inside an empty list" do
+      ll = Linkedlist::Singly(Int32).new
+
+      it "should do nothing" do
+        non_member_1 = Linkedlist::SinglyNode(Int32).new(1, nil)
+        non_member_2 = Linkedlist::SinglyNode(Int32).new(2, nil)
+        ll.move_before(non_member_2, non_member_1)
+
+        ll.head.should be_nil
+        ll.tail.should be_nil
+      end
+    end
+
+    context "inside list with one element" do
+      ll = Linkedlist::Singly(Int32).new
+      ll.insert_tail(1)
+
+      it "should do nothing" do
+        prev_head = ll.head
+        prev_tail = ll.tail
+
+        non_member = Linkedlist::SinglyNode(Int32).new(1, nil)
+        if prev_head
+          ll.move_before(non_member, prev_head)
+        end
+
+        ll.head.should eq(prev_head)
+        ll.tail.should eq(prev_tail)
+      end
+    end
+
+    context "inside list with two elements" do
+      ll = Linkedlist::Singly(Int32).new
+      ll.insert_tail(1)
+      ll.insert_tail(2)
+
+      it "should not move before if already in position" do
+        one = ll.find_element(1)
+        two = ll.find_element(2)
+        ll.move_before(one, two)
+
+        ll.head.should eq(one)
+        ll.tail.should eq(two)
+        one.next.should eq(two)
+        two.next.should be_nil
+      end
+
+      it "should move before if both found" do
+        one = ll.find_element(1)
+        two = ll.find_element(2)
+        ll.move_before(two, one)
+
+        ll.head.should eq(two)
+        ll.tail.should eq(one)
+        one.next.should be_nil
+        two.next.should eq(one)
+      end
+    end
+
+    context "inside list with multiple elements" do
+      ll = Linkedlist::Singly(Int32).new
+      10.times do |i|
+        ll.insert_tail(i + 1)
+      end
+
+      it "should move before if both found" do
+        five = ll.find_element(5)
+        six  = ll.find_element(6)
+        ll.move_before(six, five)
+
+        four = ll.find_element(4)
+        seven = ll.find_element(7)
+        four.next.should eq(six)
+        six.next.should eq(five)
+        five.next.should eq(seven)
+      end
+    end
+  end
+
+  describe "#move_after" do
+    context "inside an empty list" do
+      ll = Linkedlist::Singly(Int32).new
+
+      it "should do nothing" do
+        non_member_1 = Linkedlist::SinglyNode(Int32).new(1, nil)
+        non_member_2 = Linkedlist::SinglyNode(Int32).new(2, nil)
+        ll.move_after(non_member_2, non_member_1)
+
+        ll.head.should be_nil
+        ll.tail.should be_nil
+      end
+    end
+
+    context "inside list with one element" do
+      ll = Linkedlist::Singly(Int32).new
+      ll.insert_tail(1)
+
+      it "should do nothing" do
+        prev_head = ll.head
+        prev_tail = ll.tail
+
+        non_member = Linkedlist::SinglyNode(Int32).new(1, nil)
+        if prev_head
+          ll.move_after(non_member, prev_head)
+        end
+
+        ll.head.should eq(prev_head)
+        ll.tail.should eq(prev_tail)
+      end
+    end
+
+    context "inside list with two elements" do
+      ll = Linkedlist::Singly(Int32).new
+      ll.insert_tail(1)
+      ll.insert_tail(2)
+
+      it "should not move after if already in position" do
+        one = ll.find_element(1)
+        two = ll.find_element(2)
+        ll.move_after(two, one)
+
+        ll.head.should eq(one)
+        ll.tail.should eq(two)
+        one.next.should eq(two)
+        two.next.should be_nil
+      end
+
+      it "should move after if both found" do
+        one = ll.find_element(1)
+        two = ll.find_element(2)
+        ll.move_after(one, two)
+
+        ll.head.should eq(two)
+        ll.tail.should eq(one)
+        one.next.should be_nil
+        two.next.should eq(one)
+      end
+    end
+
+    context "inside list with multiple elements" do
+      ll = Linkedlist::Singly(Int32).new
+      10.times do |i|
+        ll.insert_tail(i + 1)
+      end
+
+      it "should move after if both found" do
+        five = ll.find_element(5)
+        six  = ll.find_element(6)
+        ll.move_after(five, six)
+
+        four = ll.find_element(4)
+        seven = ll.find_element(7)
+        four.next.should eq(six)
+        six.next.should eq(five)
+        five.next.should eq(seven)
+      end
+    end
+  end
 end
