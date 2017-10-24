@@ -83,7 +83,7 @@
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L14" target="_blank">linkedlist/singly.cr</a>
+      <a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L14" target="_blank">linkedlist/singly.cr</a>
     
     <br/>
   
@@ -154,6 +154,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#insert_after%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29-instance-method" class="signature"><strong>#insert_after</strong>(element : Linkedlist::SinglyNode(T), mark : Linkedlist::SinglyNode(T))</a>
+        
+          <div class="summary"><p>Inserts given element after the mark or raises exception if mark not found</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#insert_after%3F%28value%3AT%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3ALinkedlist%3A%3ASinglyNode%28T%29%3F-instance-method" class="signature"><strong>#insert_after?</strong>(value : T, mark : Linkedlist::SinglyNode(T)) : Linkedlist::SinglyNode(T)?</a>
         
           <div class="summary"><p>Inserts new element after the mark or returns nil if mark not found</p></div>
@@ -164,6 +171,13 @@
         <a href="#insert_before%28value%3AT%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3ALinkedlist%3A%3ASinglyNode%28T%29-instance-method" class="signature"><strong>#insert_before</strong>(value : T, mark : Linkedlist::SinglyNode(T)) : Linkedlist::SinglyNode(T)</a>
         
           <div class="summary"><p>Inserts new element before the mark or raises exception if mark not found</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#insert_before%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29-instance-method" class="signature"><strong>#insert_before</strong>(element : Linkedlist::SinglyNode(T), mark : Linkedlist::SinglyNode(T))</a>
+        
+          <div class="summary"><p>Inserts given element before the mark or returns nil if mark not found</p></div>
         
       </li>
     
@@ -196,6 +210,20 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#move_after%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29-instance-method" class="signature"><strong>#move_after</strong>(element : Linkedlist::SinglyNode(T), mark : Linkedlist::SinglyNode(T))</a>
+        
+          <div class="summary"><p>Moves element after the mark, if element and mark are present and not equal</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#move_before%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29-instance-method" class="signature"><strong>#move_before</strong>(element : Linkedlist::SinglyNode(T), mark : Linkedlist::SinglyNode(T))</a>
+        
+          <div class="summary"><p>Moves element before the mark, if element and mark are present and not equal</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#move_to_back%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%29-instance-method" class="signature"><strong>#move_to_back</strong>(element : Linkedlist::SinglyNode(T))</a>
         
           <div class="summary"><p>Moves element to front if found.</p></div>
@@ -219,7 +247,14 @@
       <li class="entry-summary">
         <a href="#remove%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3AT-instance-method" class="signature"><strong>#remove</strong>(element : Linkedlist::SinglyNode(T)) : T</a>
         
-          <div class="summary"><p>Removes an element from the linked list</p></div>
+          <div class="summary"><p>Removes an element from the linked list and returns the data</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#remove%3F%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3ALinkedlist%3A%3ASinglyNode%28T%29%3F-instance-method" class="signature"><strong>#remove?</strong>(element : Linkedlist::SinglyNode(T)) : Linkedlist::SinglyNode(T)?</a>
+        
+          <div class="summary"><p>Removes an element from the linked list and returns the element</p></div>
         
       </li>
     
@@ -276,7 +311,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -303,7 +338,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L107" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L135" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -323,7 +358,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L135" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L163" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -343,7 +378,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L123" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L151" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -363,7 +398,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L151" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L179" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -383,7 +418,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -403,7 +438,27 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L181" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L209" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="insert_after&#40;element:Linkedlist::SinglyNode&#40;T&#41;,mark:Linkedlist::SinglyNode&#40;T&#41;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>insert_after</strong>(element : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T), mark : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T))
+
+        <a class="method-permalink" href="#insert_after%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Inserts given element after the mark or raises exception if mark not found</p>
+
+<p>Running time: O(n)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L227" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -423,7 +478,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L199" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L244" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -443,7 +498,27 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L236" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L299" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="insert_before&#40;element:Linkedlist::SinglyNode&#40;T&#41;,mark:Linkedlist::SinglyNode&#40;T&#41;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>insert_before</strong>(element : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T), mark : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T))
+
+        <a class="method-permalink" href="#insert_before%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Inserts given element before the mark or returns nil if mark not found</p>
+
+<p>Running time: O(n)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L281" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -463,7 +538,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L217" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L262" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -483,7 +558,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -503,7 +578,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -523,7 +598,47 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="move_after&#40;element:Linkedlist::SinglyNode&#40;T&#41;,mark:Linkedlist::SinglyNode&#40;T&#41;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>move_after</strong>(element : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T), mark : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T))
+
+        <a class="method-permalink" href="#move_after%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Moves element after the mark, if element and mark are present and not equal</p>
+
+<p>Running time: O(n)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L355" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="move_before&#40;element:Linkedlist::SinglyNode&#40;T&#41;,mark:Linkedlist::SinglyNode&#40;T&#41;&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>move_before</strong>(element : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T), mark : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T))
+
+        <a class="method-permalink" href="#move_before%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%2Cmark%3ALinkedlist%3A%3ASinglyNode%28T%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Moves element before the mark, if element and mark are present and not equal</p>
+
+<p>Running time: O(n)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L345" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -543,7 +658,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L265" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L328" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -563,7 +678,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L248" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L311" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -583,7 +698,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L163" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L191" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -596,14 +711,34 @@
         <a class="method-permalink" href="#remove%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3AT-instance-method">#</a>
       </div>
       
-        <div class="doc"><p>Removes an element from the linked list</p>
+        <div class="doc"><p>Removes an element from the linked list and returns the data</p>
 
 <p>Running time: O(n)</p></div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L79" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L79" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="remove?&#40;element:Linkedlist::SinglyNode&#40;T&#41;&#41;:Linkedlist::SinglyNode&#40;T&#41;?-instance-method">
+      <div class="signature">
+        
+        def <strong>remove?</strong>(element : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)) : <a href="../Linkedlist/SinglyNode.html">Linkedlist::SinglyNode</a>(T)?
+
+        <a class="method-permalink" href="#remove%3F%28element%3ALinkedlist%3A%3ASinglyNode%28T%29%29%3ALinkedlist%3A%3ASinglyNode%28T%29%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Removes an element from the linked list and returns the element</p>
+
+<p>Running time: O(n)</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L107" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -623,7 +758,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/db3ee444b34bc7281025adaa4279939b425ff96d/src/linkedlist/singly.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/scriptnull/linkedlist.cr/blob/c0190aa5cffe40972c110793c670222993b6a70b/src/linkedlist/singly.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
