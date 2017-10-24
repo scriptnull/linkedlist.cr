@@ -731,7 +731,7 @@ describe "Singly" do
 
       it "should move before if both found" do
         five = ll.find_element(5)
-        six  = ll.find_element(6)
+        six = ll.find_element(6)
         ll.move_before(six, five)
 
         four = ll.find_element(4)
@@ -811,7 +811,7 @@ describe "Singly" do
 
       it "should move after if both found" do
         five = ll.find_element(5)
-        six  = ll.find_element(6)
+        six = ll.find_element(6)
         ll.move_after(five, six)
 
         four = ll.find_element(4)
