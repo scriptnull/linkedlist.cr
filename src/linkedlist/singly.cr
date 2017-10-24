@@ -73,7 +73,7 @@ module Linkedlist
       @length += 1
     end
 
-    # Removes an element from the linked list
+    # Removes an element from the linked list and returns the data
     #
     # Running time: O(n)
     def remove(element : SinglyNode(T)) : T
@@ -98,6 +98,34 @@ module Linkedlist
         return element.data
       else
         raise "ElementNotFound"
+      end
+    end
+
+    # Removes an element from the linked list and returns the element
+    #
+    # Running time: O(n)
+    def remove?(element : SinglyNode(T)) : SinglyNode(T) | Nil
+      prev = nil
+      curr = @head
+
+      while curr && curr != element
+        prev = curr
+        curr = curr.next
+      end
+      if curr
+        if prev
+          # element present at position other than head
+          prev.next = curr.next
+        else
+          # element present at head
+          @head = curr.next
+        end
+        if curr.next == nil
+          @tail = prev
+        end
+        return element
+      else
+        return nil
       end
     end
 
@@ -193,6 +221,23 @@ module Linkedlist
       return new_node
     end
 
+    # Inserts given element after the mark or raises exception if mark not found
+    #
+    # Running time: O(n)
+    def insert_after(element : SinglyNode(T), mark : SinglyNode(T))
+      marked_node = self.find_element?(mark)
+      if !marked_node
+        raise "ElementNotFound"
+      end
+
+      element.next = marked_node.next
+      marked_node.next = element
+
+      if marked_node == @tail
+        @tail = element
+      end
+    end
+
     # Inserts new element after the mark or returns nil if mark not found
     #
     # Running time: O(n)
@@ -228,6 +273,24 @@ module Linkedlist
         @head = new_node
       end
       return new_node
+    end
+
+    # Inserts given element before the mark or returns nil if mark not found
+    #
+    # Running time: O(n)
+    def insert_before(element : SinglyNode(T), mark : SinglyNode(T))
+      marked_node = self.find_element?(mark)
+      if !marked_node
+        return nil
+      end
+
+      element.next = marked_node
+      prev_node = self.previous_element?(mark)
+      if prev_node
+        prev_node.next = element
+      else
+        @head = element
+      end
     end
 
     # Inserts new element before the mark or raises exception if mark not found
@@ -273,6 +336,26 @@ module Linkedlist
           tail.next = found
         end
         @tail = found
+      end
+    end
+
+    # Moves element before the mark, if element and mark are present and not equal
+    #
+    # Running time: O(n)
+    def move_before(element : SinglyNode(T), mark : SinglyNode(T))
+      removed = self.remove?(element)
+      if removed
+        self.insert_before(removed, mark)
+      end
+    end
+
+    # Moves element after the mark, if element and mark are present and not equal
+    #
+    # Running time: O(n)
+    def move_after(element : SinglyNode(T), mark : SinglyNode(T))
+      removed = self.remove?(element)
+      if removed
+        self.insert_after(removed, mark)
       end
     end
   end
